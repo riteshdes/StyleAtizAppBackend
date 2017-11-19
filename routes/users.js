@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
 // res.send( {message: username} );
 
   connection.query(
-"SELECT username, password FROM StylistUser WHERE username = ? AND password = ?",
+"SELECT username, password, userType FROM StylistUser WHERE username = ? AND password = ?",
 [username, password]
   , function(err, row, field)  {
     console.log('UserName: ' + username);
@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
   }
   if(row.length > 0) {
     console.log(row);
-    res.send({'success': true, 'user': row[0].username });
+    res.send({'success': true, 'user': row[0].userType });
 
   }
   else {
