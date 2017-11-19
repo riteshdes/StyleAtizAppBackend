@@ -51,7 +51,7 @@ router.post('/', function(req, res, next) {
 
   }
   else {
-    res.send({'success': false, 'message': 'user not found'});
+    res.send({'success': false, 'message': 'User Not Found! Please try again.'});
   }
 });
 
