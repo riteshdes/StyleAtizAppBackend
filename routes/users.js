@@ -46,8 +46,8 @@ router.post('/', function(req, res, next) {
     res.send({ 'success': false, 'message': 'Could Not Connect to DB'});
   }
   if(row.length > 0) {
-    console.log(row);
-    res.send({'success': true, row });
+    console.log(row[0].userType);
+    res.send({'success': true}, row[0].userType);
 
   }
   else {
