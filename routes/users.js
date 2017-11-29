@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
   }
   if(row.length > 0) {
     console.log(row[0].userType);
-    res.send({'success': true}, row[0].userType);
+    res.send({'success': true, 'user': row[0].userType });
 
   }
   else {
