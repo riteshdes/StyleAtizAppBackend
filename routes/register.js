@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
 // res.send( {message: username} );
 
   connection.query(
-"INSERT INTO StylistUser(username, password, userType, email, name) VALUES (?,?,?,?,?)",
+"INSERT INTO User(username, password, userType, email, name) VALUES (?,?,?,?,?)",
 [email, password, userType, email, name]
   , function(err, row, field)  {
     console.log('The row selected: ' + row);
