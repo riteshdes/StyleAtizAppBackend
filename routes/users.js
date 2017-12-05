@@ -29,16 +29,16 @@ connection.connect(function(err) {
 router.post('/', function(req, res, next) {
 
 
-  var username = req.body.username;
+  var email = req.body.email;
   var password = req.body.password;
-// console.log('UserName: ' + username);
-// res.send( {message: username} );
+// console.log('email: ' + email);
+// res.send( {message: email} );
 
   connection.query(
-"SELECT username, password, userType FROM User WHERE username = ? AND password = ?",
-[username, password]
+"SELECT email, password, userType FROM User WHERE email = ? AND password = ?",
+[email, password]
   , function(err, row, field)  {
-    console.log('UserName: ' + username);
+    console.log('email: ' + email);
   console.log('The row selected: ' + row);
 
   if (err) {
